@@ -1,0 +1,28 @@
+This page can be considered notes while learning through this site [[https://orgmode.org/worg/org-tutorials/org-spreadsheet-intro.html][here]].
+* Org's Table Tricks
+** Keybindings
+The full list of keybindings can be found [[https://orgmode.org/worg/orgcard.html][here]].
+
+#+caption: Org Table Keybindings
+| Key Binding                            | Description                                   |
+|----------------------------------------+-----------------------------------------------|
+| @@html:<kbd>@@ C-c ? @@html:</kbd>@@   | org-table-field-info                          |
+| @@html:<kbd>@@ C-c = @@html:</kbd>@@   | write formular directly for the current field |
+| @@html:<kbd>@@ C-c * @@html:</kbd>@@   | evaluate fields with formular                 |
+| @@html:<kbd>@@ C-c } @@html:</kbd>@@   | org-table-toggle-coordinates-overlays         |
+| @@html:<kbd>@@ C-c { @@html:</kbd>@@   | org-table-toggle-formular-debugger            |
+| @@html:<kbd>@@ C-c SPC @@html:</kbd>@@ | org-table-blank-field                         |
+
++ Typing ~=~ followed by a formular in the field defines the column.
++ Typing ~:=~ followed by a formular in the field defines the field.
+
+** Compute sum and mean
+#+caption: Example for computing sum and mean
+| Student | Physics | Chemistry | Computer | Math | Mean | Sum |
+|---------+---------+-----------+----------+------+------+-----|
+| Paul    |      70 |        65 |       90 |   80 | 76.2 | 305 |
+| Daniel  |      95 |        50 |       81 |   76 | 75.5 | 302 |
+| Dirk    |      64 |        71 |       76 |   82 | 73.2 | 293 |
+|---------+---------+-----------+----------+------+------+-----|
+| Mean    |    76.3 |      62.0 |     82.3 | 79.3 |      |     |
+#+TBLFM: @2$6..@4$6=vmean($2..$-1);%.1f::@2$7..@4$7=vsum($2..$-2)::@5$2..@5$5=vmean(@2..@-1);%.1f
