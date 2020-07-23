@@ -26,3 +26,13 @@ The full list of keybindings can be found [[https://orgmode.org/worg/orgcard.htm
 |---------+---------+-----------+----------+------+------+-----|
 | Mean    |    76.3 |      62.0 |     82.3 | 79.3 |      |     |
 #+TBLFM: @2$6..@4$6=vmean($2..$-1);%.1f::@2$7..@4$7=vsum($2..$-2)::@5$2..@5$5=vmean(@2..@-1);%.1f
+* Org's TODO Tips
+** Keybindings
+#+caption: Org Table Keybindings
+| Key Binding                                | Description            |
+|--------------------------------------------+------------------------|
+| @@html:<kbd>@@ C-c ' @@html:</kbd>@@       | org-cycle-agenda-files |
+| @@html:<kbd>@@ SPC a o c @@html:</kbd>@@   | org-capture            |
+| @@html:<kbd>@@ SPC a o j j @@html:</kbd>@@ | org-journal-new-entry  |
+| @@html:<kbd>@@ SPC a o a @@html:</kbd>@@   | org-agenda-list        |
+| @@html:<kbd>@@ SPC a o t @@html:</kbd>@@   | org-todo-list          |
